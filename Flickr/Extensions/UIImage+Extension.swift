@@ -12,7 +12,6 @@ import UIKit
 public extension UIImageView {
   func setImage(url: URL, contentMode mode: UIViewContentMode = .scaleAspectFit) {
     contentMode = mode
-    self.setLoadingImage()
 
     URLSession.shared.dataTask(with: url) { data, response, error in
       guard
@@ -29,11 +28,5 @@ public extension UIImageView {
   func setImage(link: String, contentMode mode: UIViewContentMode = .scaleAspectFit) {
     guard let url = URL(string: link) else { return }
     setImage(url: url, contentMode: mode)
-  }
-  func setLoadingImage() {
-//    DispatchQueue.main.async() {
-//      self.image = UIImage.im
-//    }
-    
   }
 }
